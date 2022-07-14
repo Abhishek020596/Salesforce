@@ -3,8 +3,10 @@ trigger ContactHandlerTrigger on Contact (after insert, after update, after dele
         if(trigger.isInsert || trigger.isUpdate){
             ContactHandler.countContacts(Trigger.new);
         }
+    if(trigger.isBefore){
         if (trigger.isDelete) {
-            ContactHandlerDelete.countDelete(Trigger.old);
+            ContactHandler.contactDelete(Trigger.old);
         }
+    }
     }
 }
