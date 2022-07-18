@@ -30,7 +30,7 @@ public class ContactHandler {
         List<Account> UpdateAccountList=new List<Account>();
         for(Account obj:accounts){
             obj.no_of_contacts__c=obj.Contacts.size();
-            UpdateAccountList.add(obj);
+            UpdateAccountList.add(obj); 
         }
         UPDATE UpdateAccountList;
     }
